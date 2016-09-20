@@ -31,6 +31,8 @@ app.post('/webhook', (req, res) => {
         } else if (event.message && event.message.attachments) {
             console.log("**** attachments");
             console.log(event.message.attachments);
+            let handler = handlers["classify"];
+            handler(sender);
         } else if (event.message && event.message.text) {
             console.log("**** text")
             let result = processor.match(event.message.text);
