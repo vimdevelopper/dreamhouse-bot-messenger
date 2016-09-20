@@ -21,20 +21,17 @@ app.get('/webhook', (req, res) => {
 });
 
 app.post('/webhook', (req, res) => {
-    console.log("****");
     console.log(req.body.entry[0].messaging);
-    if (req.body.entry[0].messaging.attachments) {
-        console.log("@@@@@ attachments");
-    } else {
-        console.log("@@@@@ No attachments");
-    }
     let events = req.body.entry[0].messaging;
     for (let i = 0; i < events.length; i++) {
         let event = events[i];
         let sender = event.sender.id;
         if (process.env.MAINTENANCE_MODE && ((event.message && event.message.text) || event.postback)) {
             sendMessage({text: `Sorry I'm taking a break right now.`}, sender);
+        } else if (event.message && event.message.attachments) {
+            console.log("**** attachments")
         } else if (event.message && event.message.text) {
+            console.log("**** text")
             let result = processor.match(event.message.text);
             if (result) {
                 let handler = handlers[result.handler];
