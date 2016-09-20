@@ -23,7 +23,7 @@ app.get('/webhook', (req, res) => {
 app.post('/webhook', (req, res) => {
     console.log("****");
     console.log(req.body.entry[0].messaging);
-    if (req.body.entry[0].messaging) {
+    if (req.body.entry[0].messaging.attachments) {
         console.log("@@@@@ attachments");
     } else {
         console.log("@@@@@ No attachments");
