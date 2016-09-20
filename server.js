@@ -21,7 +21,13 @@ app.get('/webhook', (req, res) => {
 });
 
 app.post('/webhook', (req, res) => {
+    console.log("****");
     console.log(req.body.entry[0].messaging);
+    if (req.body.entry[0].messaging) {
+        console.log("@@@@@ attachments");
+    } else {
+        console.log("@@@@@ No attachments");
+    }
     let events = req.body.entry[0].messaging;
     for (let i = 0; i < events.length; i++) {
         let event = events[i];
