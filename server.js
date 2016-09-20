@@ -8,6 +8,9 @@ var express = require('express'),
     FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN,
     app = express();
 
+console.log("******FB_VERIFY_TOKEN");
+console.log(FB_VERIFY_TOKEN);
+
 app.set('port', process.env.PORT || 5000);
 
 app.use(bodyParser.json());
