@@ -8,9 +8,6 @@ var express = require('express'),
     FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN,
     app = express();
 
-console.log("******FB_VERIFY_TOKEN");
-console.log(FB_VERIFY_TOKEN);
-
 app.set('port', process.env.PORT || 5000);
 
 app.use(bodyParser.json());
@@ -24,7 +21,7 @@ app.get('/webhook', (req, res) => {
 });
 
 app.post('/webhook', (req, res) => {
-    console.log(req.body);
+    console.log(req.body.entry[0].messaging);
     let events = req.body.entry[0].messaging;
     for (let i = 0; i < events.length; i++) {
         let event = events[i];
