@@ -63,6 +63,31 @@ let findProperties = (params) => {
 
 };
 
+let findPropertiesByCategory = (category) => {
+    return new Promise((resolve, reject) => {
+        let q = `SELECT id,
+                    title__c,
+                    address__c,
+                    city__c,
+                    state__c,
+                    price__c,
+                    beds__c,
+                    baths__c,
+                    picture__c
+                FROM property__c
+                WHERE description__c LIKE '%${category}%'
+                LIMIT 5`;
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
 let findPriceChanges = () => {
     return new Promise((resolve, reject) => {
         let q = `SELECT
@@ -120,5 +145,6 @@ login();
 
 exports.org = org;
 exports.findProperties = findProperties;
+exports.findPropertiesByCategory = findPropertiesByCategory;
 exports.findPriceChanges = findPriceChanges;
 exports.createCase = createCase;
