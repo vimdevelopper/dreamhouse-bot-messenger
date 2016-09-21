@@ -75,7 +75,7 @@ let findPropertiesByCategory = (category) => {
                     baths__c,
                     picture__c
                 FROM property__c
-                WHERE title__c LIKE '%${category}%'
+                WHERE tags__c LIKE '%${category}%'
                 LIMIT 5`;
         org.query({query: q}, (err, resp) => {
             if (err) {
