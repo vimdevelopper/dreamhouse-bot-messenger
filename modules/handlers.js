@@ -70,5 +70,5 @@ exports.classify = (sender) => {
         salesforce.findProperties().then(properties => {
             messenger.send(formatter.formatProperties(properties), sender);
         });
-    }, 3000);
+    }, 1500);
 };
