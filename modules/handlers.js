@@ -66,9 +66,9 @@ exports.help = (sender) => {
 exports.classify = (sender) => {
     messenger.send({text: `OK, looking for houses like that...`}, sender);
     setTimeout(() => {
-        messenger.send({text: `OK, here are the houses I found matching "colonial:"`}, sender);
+        messenger.send({text: `Here are the houses I found matching "colonial":`}, sender);
         salesforce.findProperties().then(properties => {
             messenger.send(formatter.formatProperties(properties), sender);
-        }, 1000);
+        }, 5000);
     });
 };
