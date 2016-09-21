@@ -69,6 +69,6 @@ exports.classify = (sender) => {
         messenger.send({text: `Here are the houses I found matching "colonial":`}, sender);
         salesforce.findProperties().then(properties => {
             messenger.send(formatter.formatProperties(properties), sender);
-        }, 5000);
-    });
+        });
+    }, 1000);
 };
