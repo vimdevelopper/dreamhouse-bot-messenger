@@ -64,6 +64,7 @@ let findProperties = (params) => {
 };
 
 let findPropertiesByCategory = (category) => {
+    console.error('*** findPropertiesByCategory');
     return new Promise((resolve, reject) => {
         let q = `SELECT id,
                     title__c,
