@@ -79,6 +79,7 @@ let findPropertiesByCategory = (category) => {
                 LIMIT 5`;
         org.query({query: q}, (err, resp) => {
             if (err) {
+                console.error(err);
                 reject("An error as occurred");
             } else {
                 console.log('*** returning properties');
