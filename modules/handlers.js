@@ -62,13 +62,3 @@ exports.hi = (sender) => {
 exports.help = (sender) => {
     messenger.send({text: `You can ask me questions like "Find houses in Boston", "3 bedrooms in Boston", "3 bedrooms in Boston between 500000 and 750000", "show me price changes"`}, sender);
 };
-
-exports.classify = (sender) => {
-    messenger.send({text: `OK, looking for houses like that...`}, sender);
-    setTimeout(() => {
-        messenger.send({text: `Here are the houses I found matching "colonial":`}, sender);
-        salesforce.findPropertiesByCategory("colonial").then(properties => {
-            messenger.send(formatter.formatProperties(properties), sender);
-        });
-    }, 1500);
-};
