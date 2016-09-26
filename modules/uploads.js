@@ -2,6 +2,7 @@
 
 let messenger = require('./messenger');
 let formatter = require('./formatter');
+let salesforce = require('./salesforce');
 let visionService = require('./vision-service');
 
 exports.processUpload = (sender, attachments) => {
