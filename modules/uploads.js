@@ -10,7 +10,10 @@ exports.processUpload = (sender, attachments) => {
         if (attachment.type === "image") {
             messenger.send({text: `OK, looking for houses like that...`}, sender);
             visionService.classify(attachment.url)
-                .then(houseType => salesforce.findPropertiesByCategory(houseType))
+                .then(houseType => {
+                    console.log("***** " + houseType);
+                    return salesforce.findPropertiesByCategory(houseType)
+                })
                 .then(properties => messenger.send(formatter.formatProperties(properties), sender))
         } else {
             messenger.send({text: `This type of attachment is not supported`}, sender);
