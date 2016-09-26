@@ -81,6 +81,7 @@ let findPropertiesByCategory = (category) => {
             if (err) {
                 reject("An error as occurred");
             } else {
+                console.log('*** returning properties');
                 resolve(resp.records);
             }
         });
