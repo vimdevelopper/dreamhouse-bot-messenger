@@ -64,7 +64,6 @@ let findProperties = (params) => {
 };
 
 let findPropertiesByCategory = (category) => {
-    console.error('*** findPropertiesByCategory');
     return new Promise((resolve, reject) => {
         let q = `SELECT id,
                     title__c,
@@ -83,7 +82,6 @@ let findPropertiesByCategory = (category) => {
                 console.error(err);
                 reject("An error as occurred");
             } else {
-                console.log('*** returning properties');
                 resolve(resp.records);
             }
         });
