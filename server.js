@@ -29,6 +29,7 @@ app.post('/webhook', (req, res) => {
             sendMessage({text: `Sorry I'm taking a break right now.`}, sender);
         } else if (event.message && event.message.attachments) {
             console.log(event);
+            console.log(JSON.stringify(event.message.attachments));
             let handler = handlers["classify"];
             handler(sender);
         } else if (event.message && event.message.text) {
