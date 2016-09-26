@@ -14,7 +14,11 @@ exports.processUpload = (sender, attachments) => {
                     console.log("***** " + houseType);
                     return salesforce.findPropertiesByCategory(houseType)
                 })
-                .then(properties => messenger.send(formatter.formatProperties(properties), sender))
+                .then(properties => {
+                    console.log('** properties');
+                    console.log(properties);
+                    messenger.send(formatter.formatProperties(properties), sender)
+                })
         } else {
             messenger.send({text: `This type of attachment is not supported`}, sender);
         }
