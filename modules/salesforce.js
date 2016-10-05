@@ -77,6 +77,7 @@ let findPropertiesByCategory = (category) => {
                 FROM property__c
                 WHERE tags__c LIKE '%${category}%'
                 LIMIT 5`;
+        console.log(q);
         org.query({query: q}, (err, resp) => {
             if (err) {
                 console.error(err);
