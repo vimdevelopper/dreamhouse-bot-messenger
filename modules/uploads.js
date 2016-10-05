@@ -13,7 +13,7 @@ exports.processUpload = (sender, attachments) => {
             visionService.classify(attachment.url)
                 .then(houseType => {
                     messenger.send({text: `Looking for houses matching "${houseType}"`}, sender);
-                    salesforce.findPropertiesByCategory(houseType)
+                    return salesforce.findPropertiesByCategory(houseType)
                 })
                 .then(properties => messenger.send(formatter.formatProperties(properties), sender))
         } else {
