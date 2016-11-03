@@ -20,7 +20,7 @@ If you haven't already done so, follow the steps below to create a Salesforce co
     - API Name: MyConnectedApp
     - Contact Email: enter your email address
     - Enabled OAuth Settings: Checked
-    - Callback URL: http://localhost:8200/oauthcallback.html (You'll change this later)
+    - Callback URL: http://localhost:8200/oauthcallback.html
     - Selected OAuth Scopes: Full Access (full)
     - Click **Save**
 
@@ -42,7 +42,7 @@ If you haven't already done so, follow the steps below to create a Salesforce co
 
 ### Step 4: Create a Facebook App
 
-1. Follow [these instructions](https://developers.facebook.com/docs/messenger-platform/quickstart) to create a Facebook app. You'll have to create a Facebook page, a Facebook application, and configure Messenger for your application.
+1. Follow [these instructions](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) to create a Facebook app. You'll have to create a Facebook page, a Facebook application, and configure Messenger for your application.
 
     - When asked for a **Callback URL**, enter the URL of the Heroku app you just deployed followed by /webhook. For example:
         ```
