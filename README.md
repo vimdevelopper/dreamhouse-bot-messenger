@@ -57,12 +57,12 @@ If you haven't already done so, follow the steps below to create a Salesforce co
 
 ### Step 5: (Optional)
 
-    - From Heroku Dashboard, navigate to "Settings", then "Config Vars" and click "Reveal".
-      Copy the content from config var **EINSTEIN_VISION_PRIVATE_KEY** and save it in a file named einstein_platform.pem
-      Copy your Einstein Vision Account ID from the config var **EINSTEIN_VISION_ACCOUNT_ID**.
+1. From Heroku Dashboard, navigate to "Settings", then "Config Vars" and click "Reveal".
+    - Copy the content from config var **EINSTEIN_VISION_PRIVATE_KEY** and save it in a file named einstein_platform.pem
+    - Copy your Einstein Vision Account ID from the config var **EINSTEIN_VISION_ACCOUNT_ID**.
 
-    - Follow the instructions in this blog post to create a model:     https://developer.salesforce.com/blogs/developer-relations/2017/05/image-based-search-einstein-vision-lightning-components.html
+2. Follow [these instructions](https://developer.salesforce.com/blogs/developer-relations/2017/05/image-based-search-einstein-vision-lightning-components.html) to create a model.     
 
     - Copy the model ID and paste it in the config var **EINSTEIN_VISION_MODEL**
 
-    - Upload a house picture in the chat bot!
+3. Upload a house picture in the chat bot!
