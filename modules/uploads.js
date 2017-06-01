@@ -13,6 +13,7 @@ exports.processUpload = (sender, attachments) => {
         let attachment = attachments[0];
         if (attachment.type === "image") {
             messenger.send({text: 'OK, let me look at that picture...'}, sender);
+            console.log(attachment);
             visionService.classify(attachment.url)
                 .then(houseType => {
                     messenger.send({text: `Looking for houses matching "${houseType}"`}, sender);

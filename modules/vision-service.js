@@ -15,8 +15,6 @@ exports.classify = imageURL => new Promise(async(resolve, reject) => {
   if(token===null){
     token = await updateToken(pvsUrl,accountId,privateKey);
   }
-  console.log(imageURL);
-  console.log(model);
   let visionresult = await doClassify(pvsUrl,imageURL,model,accountId,privateKey,token);
   resolve(visionresult.probabilities[0].label);
 });
