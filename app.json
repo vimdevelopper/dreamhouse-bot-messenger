@@ -34,7 +34,8 @@
     },
     "EINSTEIN_VISION_MODEL": {
       "description": "Einstein Vision Model ID",
-      "value":""
+      "value":"",
+      "required":false
     }
   }
 }
