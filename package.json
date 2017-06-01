@@ -9,11 +9,6 @@
   "engines": {
     "node": "8.x"
   },
-  "addons": [
-    {
-      "plan": "einstein-vision:starter"
-    }
-  ],
   "author": "Christophe Coenraets <ccoenraets@gmail.com> (http://coenraets.org/)",
   "license": "ISC",
   "dependencies": {

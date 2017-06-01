@@ -1,6 +1,11 @@
 {
   "name": "DreamHouse Bot for Messenger",
   "description": "Salesforce-powered Bot for Messenger in the DreamHouse sample app",
+  "addons": [
+    {
+      "plan": "einstein-vision:starter"
+    }
+  ],
   "env": {
     "FB_PAGE_TOKEN": {
       "description": "Facebook Messenger Access Token",
