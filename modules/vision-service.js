@@ -2,6 +2,8 @@
 const jwt   = require('jsonwebtoken');
 let request = require('request-promise');
 
+process.on('unhandledRejection', r => console.log(r));
+
 exports.classify = imageURL => new Promise(async(resolve, reject) => {
 
   const pvsUrl = process.env.EINSTEIN_VISION_URL;
